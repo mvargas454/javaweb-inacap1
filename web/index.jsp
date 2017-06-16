@@ -11,7 +11,7 @@
             String driver="com.mysql.jdbc.Driver";
             String url="jdbc:mysql://localhost:3306/inacap";
             String usuario="root";
-            String clave="";
+            String clave="juajua";
             try{
                 Class.forName(driver);
                 con=DriverManager.getConnection(url,usuario,clave);
