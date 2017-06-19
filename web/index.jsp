@@ -8,13 +8,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            Course course=new Course();
-            course.setName("PROGRAMACION 10");
-            course.setDescription("TALLER AVANZADO");
-            course.setState("activo");
-            course.save();
-
-        %>
+        <form method="post" action="ServletUsuario">
+            <table>
+                <tr>
+                    <td>Usuario</td>
+                    <td><input name="username" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Clave:</td>
+                    <td><input name="password" type="password"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Iniciar"></td>
+                </tr>
+                
+            </table>
+        </form>
     </body>
 </html>
