@@ -1,4 +1,10 @@
 package cl.negocio;
+
+import cl.accesodato.Conexion;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Usuario {
     private String id;
     private String name;
@@ -8,13 +14,26 @@ public class Usuario {
     private String username;
     private String password;
     private String created_at;
-
+    Conexion con;
+    public Usuario(){
+        con=new Conexion();
+    }
     public int validar(){
-        if(this.getUsername().equals("admin") && this.getPassword().equals("admin")){
-            return 1;
-        }else{
-            return 0;
+        String sql="select * from users where username='"+this.getUsername()+"'";
+        con.setSQL(sql);
+        try {
+            while(con.getRs().next()){
+                if(con.getRs().getString("password").equals(this.getPassword())){
+                    return 1;
+                }else{
+                    return 0;
+                }
+            }
+        } catch (SQLException ex) {
+           System.out.println("ERROR");
         }
+        return 0;
+       
     }
     
     public String getId() {

@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 public class Conexion {
     private Connection con;
     private Statement stmt;
+    private ResultSet rs;
     private String driver="com.mysql.jdbc.Driver";
     private String url="jdbc:mysql://localhost:3306/inacap";
     private String user="root";
@@ -25,5 +26,16 @@ public class Conexion {
         } catch (SQLException ex) {
             System.out.println("ERROR SQL");
         }
+    }
+    public void setSQL(String sql){
+        try{
+            stmt=con.createStatement();
+            rs=stmt.executeQuery(sql);
+        }catch(Exception ex){
+            System.out.println("ERRO SQL");
+        }
+    }
+    public ResultSet getRs(){
+        return rs;
     }
 }
