@@ -15,12 +15,13 @@ public class ServletUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             Usuario usu = new Usuario();
+            HttpSession sesion = request.getSession();
             if (request.getParameter("accion").equals("ingresar")) {
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
                 usu.setUsername(username);
                 usu.setPassword(password);
-                HttpSession sesion = request.getSession();
+                
                 if (usu.validar() == 1) {
                     sesion.setAttribute("conectado", "true");
                     response.sendRedirect("inicio.jsp");
@@ -40,6 +41,9 @@ public class ServletUsuario extends HttpServlet {
                 usu.setUsername(username);
                 usu.setPassword(password);
                 usu.save();
+                response.sendRedirect("index.jsp");
+            }else if(request.getParameter("accion").equals("cerrar")){
+                sesion.invalidate();
                 response.sendRedirect("index.jsp");
             }
 

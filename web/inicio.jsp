@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <%
     HttpSession sesion=request.getSession();
-    if(sesion.getAttribute("conectado").equals("true")){
-    
-    }else{
+    if(sesion.getAttribute("conectado")==null || sesion.getAttribute("conectado").equals("false")  ){
         response.sendRedirect("index.jsp");
+    }else{
+    
     }
  %>
 <html>
@@ -14,6 +14,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form method="post" action="ServletUsuario?accion=cerrar">
+            <input type="submit" value="Cerrar Sesion">
+        </form>
+        <br>
         <h1>Bienvenido!!!</h1>
     </body>
 </html>
