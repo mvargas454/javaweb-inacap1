@@ -29,7 +29,18 @@ public class ServletUsuario extends HttpServlet {
                     response.sendRedirect("index.jsp");
                 }
             }else if(request.getParameter("accion").equals("registrar")){
-                out.println("USTED SELECCION REGISTRAR");
+                String name=request.getParameter("name");
+                String apepat=request.getParameter("apepat");
+                String apemat=request.getParameter("apemat");
+                String username=request.getParameter("username");
+                String password=request.getParameter("password");
+                usu.setName(name);
+                usu.setApepat(apepat);
+                usu.setApemat(apemat);
+                usu.setUsername(username);
+                usu.setPassword(password);
+                usu.save();
+                response.sendRedirect("index.jsp");
             }
 
         }

@@ -18,6 +18,13 @@ public class Usuario {
     public Usuario(){
         con=new Conexion();
     }
+    
+    public void save(){
+        String sql="insert into users(name,apepat,apemat,username,password,created_at,state) values('"+this.getName()+"','"+this.getApepat()+"','"+this.getApemat()+"','"+this.getUsername()+"','"+this.getPassword()+"',now(),'activo')";
+        con.runSql(sql);
+    }
+    
+    
     public int validar(){
         String sql="select * from users where username='"+this.getUsername()+"'";
         con.setSQL(sql);
