@@ -8,7 +8,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form method="post" action="ServletUsuario">
+        <a href="registrar.jsp">Registrar Usuario</a><br>
+        
+        <form method="post" action="ServletUsuario?accion=ingresar">
             <table>
                 <tr>
                     <td>Usuario</td>

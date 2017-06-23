@@ -1,3 +1,4 @@
+
 import cl.negocio.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,26 +7,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 public class ServletUsuario extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-                String username=request.getParameter("username");
-                String password=request.getParameter("password");
-                Usuario usu=new Usuario();
+            Usuario usu = new Usuario();
+            if (request.getParameter("accion").equals("ingresar")) {
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
                 usu.setUsername(username);
                 usu.setPassword(password);
-                HttpSession sesion=request.getSession();
-                if(usu.validar()==1){
+                HttpSession sesion = request.getSession();
+                if (usu.validar() == 1) {
                     sesion.setAttribute("conectado", "true");
                     response.sendRedirect("inicio.jsp");
-                }else{
+                } else {
                     sesion.setAttribute("conectado", "false");
                     response.sendRedirect("index.jsp");
                 }
-                
+            }else if(request.getParameter("accion").equals("registrar")){
+                out.println("USTED SELECCION REGISTRAR");
+            }
+
         }
     }
 
