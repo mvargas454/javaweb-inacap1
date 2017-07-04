@@ -44,6 +44,7 @@
                 %>
             </body>
         </table>
+            <a href="../inicio.jsp">VOLVER</a>
         
     </body>
 </html>

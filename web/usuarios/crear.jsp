@@ -15,20 +15,20 @@
                     <td><input type="text" name="name"></td>
                 </tr>
                 <tr>
-                    <td>Apepat</td>
-                    <td><input type="text" name="Apellido Paterno"></td>
+                    <td>Apellido Paterno</td>
+                    <td><input type="text" name="apepat"></td>
                 </tr>
                 <tr>
-                    <td>Apemat</td>
-                    <td><input type="text" name="Apellido Materno"></td>
+                    <td>Apellido Materno</td>
+                    <td><input type="text" name="apemat"></td>
                 </tr>
                 <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="Nombre de Usuario"></td>
+                    <td>Nombre Usuario</td>
+                    <td><input type="text" name="username"></td>
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="Contraseña"></td>
+                    <td>Contraseña</td>
+                    <td><input type="password" name="password"></td>
                 </tr>
                 
                 
@@ -38,5 +38,6 @@
                 </tr>
             </table>
         </form>
+        <a href="../inicio.jsp">VOLVER</a>
     </body>
 </html>

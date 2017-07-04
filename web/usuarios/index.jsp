@@ -33,7 +33,6 @@
             </thead>
             <tbody>
             <%
-            //Course course=new Course();
               Conexion con=new Conexion();
               con.setSQL("select * from users");
               while(con.getRs().next()){

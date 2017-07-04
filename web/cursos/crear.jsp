@@ -23,5 +23,6 @@
                 </tr>
             </table>
         </form>
+        <a href="../inicio.jsp">VOLVER</a>
     </body>
 </html>
