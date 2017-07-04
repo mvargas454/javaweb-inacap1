@@ -19,6 +19,7 @@
         </form>
         <br>
         <h1>Bienvenido!!!</h1><br>
-        <a href="cursos/index.jsp"> Modulo Cursos </a>
+        <a href="cursos/index.jsp"> Modulo Cursos </a><br>
+        <a href="usuarios/index.jsp">Modulo Usuarios</a>
     </body>
 </html>
